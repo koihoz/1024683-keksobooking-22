@@ -1,7 +1,7 @@
 # Личный проект «Кексобукинг»
 
 * Студент: [ALEKSANDR Р](https://up.htmlacademy.ru/javascript/22/user/1024683).
-* Наставник: `Неизвестно`.
+* Наставник: [Вадим Новаш](https://htmlacademy.ru/profile/stakeout).
 
 ---
 
