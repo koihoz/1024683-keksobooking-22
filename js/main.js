@@ -1,15 +1,19 @@
 //Функция, возвращающая случайное целое число из переданного диапазона включительно.
-function getRandomIntInclusive(min, max) {
+function getRandomIntInclusive (min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min; //Максимум и минимум включаются
 }
 
+getRandomIntInclusive (2, 10);
+
 //Функция, возвращающая случайное число с плавающей точкой из переданного диапазона включительно.
-function getRandomNumber(from, to, decimal = 2) {
+function getRandomNumber (from, to, decimal = 2) {
   if (to > from && from >= 0) {
     return +((Math.random() * (to - from) + from).toFixed(decimal));
   }
 
   throw new Error('Input data error');
 }
+
+getRandomNumber (3, 8);
