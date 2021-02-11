@@ -80,4 +80,13 @@ const createAdvert = () => {
       y: getRandomNumber(LOCATION.Y.MIN, LOCATION.Y.MAX, 5),
     },
   }
-}
+};
+
+const createAdverts = () => {
+  for (let i = 1; i <= 10; i++) {
+    const arr = [];
+    arr.push(createAdvert())
+  }
+};
+
+createAdverts();
