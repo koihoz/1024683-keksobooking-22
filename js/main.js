@@ -2,7 +2,6 @@
 
 const OFFER = {
   TITLES: ['Просторная однушка', 'Студия', 'Для одного человека'],
-  ADDRESS: '{{location.x}}, {{location.y}}',
   PRICES: {
     MIN: 0,
     MAX: 1000000,
@@ -56,6 +55,11 @@ const getRandomElementArr = (arr) => {
   return arr[getRandomIntInclusive(0, arr.length - 1)]
 };
 
+//Функция, возвращающая массив случайной длины из значений родительского массива.
+const getArrRandomLength = (arr) => {
+  return arr.slice(0, getRandomIntInclusive(0, arr.length - 1));
+}
+
 
 const createAdvert = () => {
   return {
@@ -71,9 +75,9 @@ const createAdvert = () => {
       guests: getRandomIntInclusive(OFFER.GUESTS.MIN, OFFER.GUESTS.MAX),
       checkin: getRandomElementArr(OFFER.CHECKINS),
       checkout: getRandomElementArr(OFFER.CHECKOUTS),
-      //  features: getArrRandomLength(OFFER.FEATURES), понимаю, что нужна отдельная функция , но не понимаю как написать
+      features: getArrRandomLength(OFFER.FEATURES),
       description: getRandomElementArr(OFFER.DESCRIPTIONS),
-      // photos: getArrRandomLength(OFFER.PHOTOS),
+      photos: getArrRandomLength(OFFER.PHOTOS),
     },
     location: {
       x: getRandomNumber(LOCATION.X.MIN, LOCATION.X.MAX, 5),
@@ -83,10 +87,12 @@ const createAdvert = () => {
 };
 
 const createAdverts = () => {
-  for (let i = 1; i <= 10; i++) {
-    const arr = [];
-    arr.push(createAdvert())
+  const arr = [];
+  for (let i = 0; i < 10; i++) {
+    arr.push(createAdvert());
   }
+  return arr;
 };
+
 
 createAdverts();
