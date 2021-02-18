@@ -58,17 +58,20 @@ const getRandomElementArr = (arr) => {
 //Функция, возвращающая массив случайной длины из значений родительского массива.
 const getArrRandomLength = (arr) => {
   return arr.slice(0, getRandomIntInclusive(0, arr.length - 1));
-}
-
+};
 
 const createAdvert = () => {
+  const x = getRandomNumber(LOCATION.X.MIN, LOCATION.X.MAX, 5);
+  const y = getRandomNumber(LOCATION.Y.MIN, LOCATION.Y.MAX, 5);
+
   return {
     author: {
       avatar: `img/avatars/user0${getRandomIntInclusive(1, 8)}.png`,
     },
+    location: [x,y],
     offer: {
       title: getRandomElementArr(OFFER.TITLES),
-      address: `${location.x, location.y}`,
+      address: [x,y],
       price: getRandomIntInclusive(OFFER.PRICES.MIN, OFFER.PRICES.MAX),
       type: getRandomElementArr(OFFER.TYPES),
       rooms: getRandomIntInclusive(OFFER.ROOMS.MIN, OFFER.ROOMS.MAX),
@@ -78,10 +81,6 @@ const createAdvert = () => {
       features: getArrRandomLength(OFFER.FEATURES),
       description: getRandomElementArr(OFFER.DESCRIPTIONS),
       photos: getArrRandomLength(OFFER.PHOTOS),
-    },
-    location: {
-      x: getRandomNumber(LOCATION.X.MIN, LOCATION.X.MAX, 5),
-      y: getRandomNumber(LOCATION.Y.MIN, LOCATION.Y.MAX, 5),
     },
   }
 };
