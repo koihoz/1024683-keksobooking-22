@@ -5,6 +5,10 @@ import {
   getArrRandomLength
 } from './util.js';
 
+export {
+  createAdverts
+};
+
 const OFFER = {
   TITLES: ['Просторная однушка', 'Студия', 'Для одного человека'],
   PRICES: {
@@ -72,4 +76,4 @@ const createAdverts = () => {
 };
 
 
-createAdverts();
+
