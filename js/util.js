@@ -1,3 +1,10 @@
+export {
+  getRandomIntInclusive,
+  getRandomNumber,
+  getRandomElementArr,
+  getArrRandomLength
+};
+
 //Функция, возвращающая случайное целое число из переданного диапазона включительно.
 const getRandomIntInclusive = (min, max) => {
   const minValue = Math.ceil(min);
@@ -22,11 +29,4 @@ const getRandomElementArr = (arr) => {
 //Функция, возвращающая массив случайной длины из значений родительского массива.
 const getArrRandomLength = (arr) => {
   return arr.slice(0, getRandomIntInclusive(0, arr.length - 1));
-};
-
-export {
-  getRandomIntInclusive,
-  getRandomNumber,
-  getRandomElementArr,
-  getArrRandomLength
 };
