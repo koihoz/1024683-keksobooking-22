@@ -1,12 +1,13 @@
-const selectTypeHousing = document.querySelector('#type');
-const inputPrice = document.querySelector('#price');
-const selectTimeIn = document.querySelector('#timein');
-const selectTimeOut = document.querySelector('#timeout');
-const fieldsetTime = document.querySelector('.ad-form__element--time');
+const form = document.querySelector('.ad-form');
+const selectTypeHousing = form.querySelector('#type');
+const inputPrice = form.querySelector('#price');
+const selectTimeIn = form.querySelector('#timein');
+const selectTimeOut = form.querySelector('#timeout');
 
 
-const setInputPrice = () => {
-  switch (selectTypeHousing.value) {
+const setInputPrice = (evt) => {
+  const target = evt.target.value
+  switch (target) {
     case 'bungalow':
       inputPrice.placeholder = '0';
       inputPrice.min = '0';
@@ -29,16 +30,16 @@ const setInputPrice = () => {
   }
 }
 
-selectTypeHousing.addEventListener('change', () => {
-  setInputPrice();
-});
+selectTypeHousing.addEventListener('change', setInputPrice);
 
-fieldsetTime.addEventListener('change', (evt) => {
-  if (evt.target.name === 'timein') {
-    selectTimeOut.value = evt.target.value;
-  }
+const setTimeIn = (evt) => {
+  selectTimeIn.value = evt.target.value;
+}
 
-  if (evt.target.name === 'timeout') {
-    selectTimeIn.value = evt.target.value;
-  }
-});
+const setTimeOut = (evt) => {
+  selectTimeOut.value = evt.target.value;
+}
+
+selectTimeOut.addEventListener('change', setTimeIn);
+
+selectTimeIn.addEventListener('change', setTimeOut);
