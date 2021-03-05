@@ -72,11 +72,11 @@ const createCardsArray = () => {
   return cards;
 };
 
+
 const cardsArray = createCardsArray();
 
 const addCardIntoContainer = (arr) => {
-  //const fragment = document.createDocumentFragment();
   similarListElement.appendChild(arr[0]);
 };
-
-addCardIntoContainer(cardsArray);
+// cкрыли код отрисовки одного из сгенерированных DOM-элементов объявления
+//addCardIntoContainer(cardsArray);
