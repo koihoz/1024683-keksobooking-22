@@ -79,4 +79,4 @@ const addCardIntoContainer = (arr) => {
   similarListElement.appendChild(arr[0]);
 };
 // cкрыли код отрисовки одного из сгенерированных DOM-элементов объявления
-//addCardIntoContainer(cardsArray);
+// addCardIntoContainer(cardsArray);
