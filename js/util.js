@@ -13,7 +13,7 @@ const getRandomIntInclusive = (min, max) => {
 };
 
 //Функция, возвращающая случайное число с плавающей точкой из переданного диапазона включительно.
-const getRandomNumber = (from, to, decimal = 2) => {
+const getRandomNumber = (from, to, decimal = 5) => {
   if (to > from && from >= 0) {
     return Number((Math.random() * (to - from) + from).toFixed(decimal));
   }

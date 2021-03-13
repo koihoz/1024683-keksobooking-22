@@ -80,3 +80,6 @@ const addCardIntoContainer = (arr) => {
 };
 // cкрыли код отрисовки одного из сгенерированных DOM-элементов объявления
 // addCardIntoContainer(cardsArray);
+
+
+export {cardsArray};
