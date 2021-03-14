@@ -2,6 +2,8 @@ import {
   createAdverts
 } from './data.js';
 
+
+
 const typeProperty = {
   flat: 'Квартира',
   bungalow: 'Бунгало',
@@ -9,7 +11,7 @@ const typeProperty = {
   palace: 'Дворец',
 };
 
-const similarListElement = document.querySelector('.map__canvas');
+//const similarListElement = document.querySelector('.map__canvas');
 const similarCardTemplate = document.querySelector('#card')
   .content
   .querySelector('.popup');
@@ -43,9 +45,9 @@ const createPhotos = (photosList) => {
 }
 
 const similarCards = createAdverts();
-
 const createCardsArray = () => {
   const cards = [];
+  const coords = [];
 
   similarCards.forEach((card) => {
     const cardElement = similarCardTemplate.cloneNode(true);
@@ -65,21 +67,21 @@ const createCardsArray = () => {
     const features = createFeatures(card.offer.features, cardElement.querySelector('.popup__feature'));
     cardElement.querySelector('.popup__features').innerHTML = '';
     cardElement.querySelector('.popup__features').appendChild(features);
-
+    
+    coords.push({x: card.location[0], y: card.location[1]});
     cards.push(cardElement);
   });
 
-  return cards;
+  return [cards, coords];
 };
 
 
-const cardsArray = createCardsArray();
-
-const addCardIntoContainer = (arr) => {
-  similarListElement.appendChild(arr[0]);
-};
+const [cards, coords] = createCardsArray();
+//const addCardIntoContainer = (arr) => {
+//  similarListElement.appendChild(arr[0]);
+//};
 // cкрыли код отрисовки одного из сгенерированных DOM-элементов объявления
 // addCardIntoContainer(cardsArray);
 
 
-export {cardsArray};
+export {cards, coords};

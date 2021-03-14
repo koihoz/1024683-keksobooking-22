@@ -18,13 +18,13 @@ disabledForm();
 
 const includedForm =  () => {
   let mapFilters = document.querySelector('.map__filters');
-   mapFilters.classList.remove('ad-form--disabled');
-   let mapFiltersAll = mapFilters.children;
-   for (let i = 0; i < mapFiltersAll.length; i++) {
-     mapFiltersAll[i].removeAttribute('disabled', '');
-   }
+  mapFilters.classList.remove('ad-form--disabled');
+  let mapFiltersAll = mapFilters.children;
+  for (let i = 0; i < mapFiltersAll.length; i++) {
+    mapFiltersAll[i].removeAttribute('disabled', '');
+  }
 
-   let adForm = document.querySelector('.ad-form');
+  let adForm = document.querySelector('.ad-form');
   adForm.classList.remove('ad-form--disabled');
   let adFormAll = adForm.children;
   for (let i = 0; i < adFormAll.length; i++) {
